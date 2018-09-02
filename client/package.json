@@ -1,11 +1,11 @@
 {
-  "name": "custom-stagings",
+  "name": "tracking",
   "version": "1.0.0",
   "description": "An app to see what stagings are in",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/GiancarlosIO/custom-stagings"
+    "url": "https://github.com/GiancarlosIO/tracking"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

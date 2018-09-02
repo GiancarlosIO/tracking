@@ -1,5 +1,5 @@
 #!/bin/bash
-DATABASE_NAME=customstagingsdev
+DATABASE_NAME=trackingdev
 
 echo "Dropping database 🚀 "
 psql postgres -c "drop database ${DATABASE_NAME}"
