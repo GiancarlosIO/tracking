@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'react-emotion';
+import { Link } from 'react-router-dom';
 
 import CloudWrap from './components/CloudWrap';
 import Sun from './components/Sun';
@@ -33,7 +34,6 @@ const Container = styled.div`
 `;
 
 const Logo = styled.div`
-  font-family: 'Baloo Tammudu', cursive;
   background-color: rgba(61, 61, 61, .5);
   padding: 8px 50px 24px 50px;
   border-radius: 30px;
@@ -44,6 +44,27 @@ const Logo = styled.div`
   }
   & > h1 {
     margin-bottom: 0px;
+    font-weight: bold;
+  }
+`;
+
+const LinkContainer = styled.div`
+  position: absolute;
+  top: 8px;
+  right: 8px;
+`;
+
+const StyledLink = styled(Link)`
+  padding: 8px 16px;
+  display: inline-block;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  color: white;
+  transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #7d5fff;
+    border: 2px solid #7d5fff;
   }
 `;
 
@@ -52,9 +73,17 @@ const Home = () => (
     <Sun />
     <CloudWrap />
     <Logo className='txt-white txt-center'>
-      <h1 className='txt-36'>Tracking</h1>
-      <span className='txt-12'>coming soon...</span>
+      <h1 className='txt-36'>
+        Tracking
+        {' '}
+      </h1>
+      <span className='txt-12'>coming soon...🚀</span>
     </Logo>
+    <LinkContainer className='txt-white'>
+      <StyledLink to='/login'>
+        Ingresar
+      </StyledLink>
+    </LinkContainer>
   </Container>
 );
 
