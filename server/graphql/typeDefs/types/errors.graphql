@@ -1,0 +1,12 @@
+type ErrorData {
+  columns: [String]
+  table: String
+  constraint: String
+}
+
+type Error {
+  message: String
+  type: String
+  code: Int
+  data: ErrorData
+}

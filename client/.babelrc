@@ -1,0 +1,32 @@
+{
+  "env": {
+    "development": {
+      "plugins": [
+        ["babel-plugin-emotion", {
+          "sourceMap": true,
+          "autoLabel": true,
+          "labelFormat": "[local]"
+        }]
+      ]
+    },
+    "production": {
+      "plugins": [
+        "@babel/plugin-transform-react-constant-elements",
+        "@babel/plugin-transform-react-inline-elements",
+        "babel-plugin-transform-remove-console",
+        "babel-plugin-transform-react-remove-prop-types",
+        ["babel-plugin-emotion", {
+          "hoist": true,
+          "sourceMap": false
+        }]
+      ]
+    }
+  },
+  "plugins": [
+    "@babel/plugin-syntax-typescript",
+    ["@babel/plugin-syntax-decorators", { "legacy": true }],
+    "@babel/plugin-syntax-jsx",
+    "@babel/plugin-syntax-dynamic-import",
+    "react-hot-loader/babel"
+  ]
+}

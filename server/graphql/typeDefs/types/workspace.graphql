@@ -1,0 +1,9 @@
+type Workspace {
+  name: String!
+  description: String
+  logo: String
+}
+
+type Query {
+  workspaces: [Workspace!]
+}

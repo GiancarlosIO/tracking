@@ -1,0 +1,41 @@
+# import Workspace from 'workspace.graphql'
+# import Error from 'errors.graphql'
+
+type User {
+  """
+  The model user
+  """
+  username: String!
+  email: String!
+  description: String
+  workspaces: [Workspace!]
+  token: String
+}
+
+input SignUpInput {
+  username: String!
+  email: String! @constraint(minLength: 6, format: "email")
+  password: String!
+}
+
+input SignInInput {
+  username: String!
+  password: String!
+}
+
+type SignInSignUpResponse {
+  ok: Boolean!
+  user: User
+  errors: [Error]
+}
+
+type Query {
+  users: [User!]
+  user(id: Int): User
+  me: User
+}
+
+type Mutation {
+  signUp(input: SignUpInput) : SignInSignUpResponse!
+  signIn(input: SignInInput) : SignInSignUpResponse!
+}

@@ -1,0 +1,5 @@
+# front end files
+node_modules
+client/dist
+server/public
+npm-debug.log
