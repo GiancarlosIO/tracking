@@ -22,11 +22,17 @@
       ]
     }
   },
+  "presets": [
+    "@babel/preset-react",
+    "@babel/preset-env",
+    ["@babel/preset-typescript", {
+      "isTSX": true,
+      "allExtensions": true
+    }]
+  ],
   "plugins": [
-    "@babel/plugin-syntax-typescript",
-    ["@babel/plugin-syntax-decorators", { "legacy": true }],
-    "@babel/plugin-syntax-jsx",
-    "@babel/plugin-syntax-dynamic-import",
+    "@babel/proposal-class-properties",
+    "@babel/proposal-object-rest-spread",
     "react-hot-loader/babel"
   ]
 }

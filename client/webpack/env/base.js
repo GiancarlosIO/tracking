@@ -14,7 +14,6 @@ const {
   file,
   style,
   graphql,
-  typescript,
 } = require('../loaders');
 
 const base = {
@@ -28,8 +27,7 @@ const base = {
   },
   module: {
     rules: [
-      typescript,
-      // babel,
+      babel,
       style,
       file,
       graphql,
