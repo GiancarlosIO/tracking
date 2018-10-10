@@ -1,11 +1,15 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es5",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "noEmit": true,
     "strict": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
     "outDir": "./dist",
     "sourceMap": true,
-    "moduleResolution": "node",
     "noImplicitAny": true,
     "jsx": "react",
     "baseUrl": ".",

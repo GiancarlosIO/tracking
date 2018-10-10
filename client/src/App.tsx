@@ -1,9 +1,11 @@
 import * as React from 'react';
 import styled, { injectGlobal } from 'react-emotion';
 import { hot } from 'react-hot-loader';
-import * as ReactRouter from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import Home from './Pages/Home';
+import Login from './Pages/Login';
 
 injectGlobal`
   body {
@@ -16,21 +18,22 @@ injectGlobal`
 const Container = styled.div`
 `;
 
-const Login = () => {
-  return (
-    <h2>11</h2>
-  );
-}
-
+const renderFunction = ({ location }: { location: any }) : React.ReactNode => (
+  <TransitionGroup>
+    <CSSTransition key={location.key} classNames='fade' timeout={300}>
+      <Switch location={location}>
+        <Route exact={true} path='/' component={Home} />
+        <Route exact={true} path='/login' component={Login} />
+      </Switch>
+    </CSSTransition>
+  </TransitionGroup>
+);
 
 const App: React.SFC<{}> = () => (
   <Container>
-    <ReactRouter.BrowserRouter>
-      <ReactRouter.Switch>
-        <ReactRouter.Route exact path="/" component={Home} />
-        <ReactRouter.Route exact path="/login" component={Login} />
-      </ReactRouter.Switch>
-    </ReactRouter.BrowserRouter>
+    <Router>
+      <Route render={renderFunction} />
+    </Router>
   </Container>
 );
 
